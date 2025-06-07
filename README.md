@@ -94,6 +94,7 @@ server {
 
 * 🔐 HTTPS is enabled with Let's Encrypt.
 * 📄 Direct access to the resume PDF file is **blocked** using Nginx rules.
+* 📧 Resume download is protected by an email OTP verification functionality to ensure authorized access.
 * ✅ Code is scanned using [Gitleaks](https://github.com/gitleaks/gitleaks) to ensure no secrets are committed.
 
 ---
