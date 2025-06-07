@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional resume of Sushil Swarnkar, a Senior DevOps Engineer specializing in AWS, CI/CD pipelines, and container orchestration.">
+    <meta name="keywords" content="DevOps, AWS, Kubernetes, CI/CD, CloudOps, Sushil Swarnkar, Senior DevOps Engineer">
+    <meta name="author" content="Sushil Swarnkar">
+    <title>Sushil Swarnkar - Senior DevOps Engineer</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #1e1e2e, #2a2a3c);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, #6b21a8, #ec4899);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1.5rem;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"%3E%3C/path%3E%3C/svg%3E');
+            background-size: cover;
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
+            animation: slideIn 1s ease-out;
+        }
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            animation: slideIn 1.2s ease-out;
+        }
+        .header a {
+            color: #facc15;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .header a:hover {
+            color: #fff;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(30, 30, 46, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            z-index: 100;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0;
+        }
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ec4899;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav a:hover::after {
+            width: 80%;
+        }
+        .nav a:hover {
+            background: #6b21a8;
+            transform: translateY(-2px);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.7rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 2rem;
+            margin: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: transform 0.5s ease;
+            animation: sectionFadeIn 1s ease-out;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section h2 {
+            color: #ec4899;
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #facc15;
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .skills ul, .achievements ul, .languages ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+        .skills ul li, .achievements ul li, .languages ul li {
+            background: linear-gradient(45deg, #6b21a8, #ec4899);
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .skills ul li:hover, .achievements ul li:hover, .languages ul li:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 1rem rgba(236, 72, 153, 0.5);
+        }
+        .experience ul li, .education ul li {
+            margin-bottom: 1.7rem;
+        }
+        .experience ul li h3, .education ul li h3 {
+            font-size: 1.2rem;
+            color: #ec4899;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .experience ul li p, .education ul li p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .experience ul li ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .experience ul li ul li {
+            margin-bottom: 0.5rem;
+        }
+        .certifications ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            gap: 1.5rem;
+        }
+        .certifications ul li {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 0.8rem;
+            box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .certifications ul li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0.5rem 1.5rem rgba(236, 72, 153, 0.3);
+        }
+        .certifications ul li img {
+            display: none;
+        }
+        .certifications ul li i {
+            color: #facc15;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+        .certifications ul li span {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Download Section */
+        .download {
+            text-align: center;
+            padding: 2rem;
+        }
+        .download button {
+            background: linear-gradient(45deg, #ec4899, #facc15);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .download button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        .download button::before {
+            left: 100%;
+        }
+        .download button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 1.5rem rgba(236, 72, 153, 0.5);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+            animation: popIn 0.5s ease-out;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-content h3 {
+            color: #ec4899;
+            margin-bottom: 1.2rem;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .modal-content button {
+            background: linear-gradient(45deg, #6b21a8, #ec4899);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .modal-content button:hover {
+            background: linear-gradient(45deg, #ec4899, #facc15);
+            transform: translateY(-2px);
+        }
+        .modal-content p.error {
+            color: #facc15;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #e2e8f0;
+            transition: color 0.3s ease;
+        }
+        .close:hover {
+            color: #ec4899;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            .container {
+                margin: 1rem;
+                padding: 0.5rem;
+            }
+            .header {
+                padding: 2.5rem 1rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(30, 30, 46, 0.95);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.3);
+            }
+            .nav ul.active {
+                display: flex;
+            }
+            .nav a {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+                width: 90%;
+                text-align: center;
+            }
+            .hamburger {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 0.7rem;
+            }
+            .section {
+                margin: 0.8rem;
+                padding: 1rem;
+            }
+            .section h2 {
+                font-size: 1.4rem;
+            }
+            .section p {
+                font-size: 0.85rem;
+            }
+            .skills ul, .achievements ul, .languages ul {
+                gap: 0.7rem;
+            }
+            .skills ul li, .achievements ul li, .languages ul li {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+            .experience ul li h3, .education ul li h3 {
+                font-size: 1rem;
+            }
+            .experience ul li p, .education ul li p {
+                font-size: 0.85rem;
+            }
+            .experience ul li ul {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
+            .certifications ul {
+                grid-template-columns: 1fr;
+            }
+            .certifications ul li {
+                padding: 0.8rem;
+            }
+            .certifications ul li i {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1.2rem;
+            }
+            .certifications ul li span {
+                font-size: 0.85rem;
+            }
+            .download button {
+                font-size: 0.95rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav, .hamburger, .download, .modal {
+                display: none;
+            }
+            .container {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                background: #fff;
+            }
+            .header {
+                clip-path: none;
+                background: #fff;
+                color: #000;
+            }
+            .section {
+                margin: 0.5rem;
+                padding: 0.5rem;
+                page-break-inside: avoid;
+                background: #fff;
+                color: #000;
+            }
+            .section h2, .experience ul li h3, .education ul li h3, .certifications ul li span {
+                color: #000;
+            }
+            .section p, .experience ul li p, .education ul li p, .experience ul li ul li {
+                color: #333;
+            }
+            .certifications ul li i {
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Sushil Swarnkar</h1>
+            <p>Senior DevOps Engineer</p>
+            <p>A3 403, Shukan Smile City, New Ranip, Ahmedabad | Ph: <a href="tel:+918107242643">8107242643</a> | Email: <a href="mailto:sushilsoni2407@gmail.com">sushilsoni2407@gmail.com</a></p>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav">
+            <button class="hamburger" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#languages">Languages & Tools</a></li>
+            </ul>
+        </div>
+
+        <!-- Professional Summary Section -->
+        <div class="section" id="summary">
+            <h2>Professional Summary</h2>
+            <p>Certified IT professional with over 6 years of experience in DevOps, CloudOps, and server administration. Expert in managing AWS services (EC2, RDS, S3, EKS, ECS, CloudFront, etc.) and architecting CI/CD pipelines using Git, Jenkins, and CodePipeline. Proficient in container orchestration with Docker, Kubernetes, and DCOS, and configuration management with Chef and Ansible. Skilled in monitoring tools like Dynatrace, PagerDuty, and CloudWatch, with a proven track record of migrating on-premise applications to cloud environments. After a 1-year-4-month career gap, I am eager to contribute with renewed enthusiasm, leveraging AI tools like Codeium, ChatGPT, and BrainBoard for efficient infrastructure provisioning.</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section" id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>AWS (EC2, RDS, S3, EKS, ECS, CloudFront, ELB, Route53)</li>
+                <li>CI/CD (Jenkins, Git, CodePipeline, GitLab)</li>
+                <li>Container Orchestration (Docker, Kubernetes, DCOS, OpenShift)</li>
+                <li>Configuration Management (Chef, Ansible)</li>
+                <li>Monitoring (Dynatrace, PagerDuty, DataDog, Nagios, CloudWatch)</li>
+                <li>Terraform</li>
+                <li>Grafana & Prometheus</li>
+                <li>ELK Stack</li>
+                <li>Linux Administration</li>
+                <li>Scripting (Shell, Python)</li>
+                <li>Web Technologies (HTML, CSS, PHP, SQL)</li>
+                <li>Servers (Apache, Nginx, MySQL)</li>
+                <li>Tools (Jira, Slack, Postfix)</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section" id="experience">
+            <h2>Professional Experience</h2>
+            <ul>
+                <li>
+                    <h3>Senior DevOps Engineer - Codal Systems Pvt Ltd, Ahmedabad</h3>
+                    <p>Nov 2022 - Sep 2023</p>
+                    <ul>
+                        <li>Architected scalable AWS cloud deployments (EC2, RDS, S3, CloudFront, ELB).</li>
+                        <li>Built CI/CD pipelines for QA and production environments using Jenkins and Git.</li>
+                        <li>Provisioned Kubernetes clusters for multiple projects.</li>
+                        <li>Implemented multicluster monitoring with Grafana and Prometheus.</li>
+                        <li>Established centralized logging with ELK stack.</li>
+                        <li>Authored comprehensive documentation for system resilience.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Senior DevOps Engineer - iBaset India Software Pvt Ltd, Ahmedabad</h3>
+                    <p>Aug 2020 - Oct 2022</p>
+                    <ul>
+                        <li>Managed build and release cycles with GitLab and Jenkins CI/CD pipelines.</li>
+                        <li>Developed reusable Terraform modules for AWS infrastructure.</li>
+                        <li>Conducted container image security vulnerability analysis.</li>
+                        <li>Collaborated on scalable, high-performance systems with teams.</li>
+                        <li>Created QA sandbox environments.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>DevOps Engineer - Einfochips Ltd, Ahmedabad</h3>
+                    <p>Oct 2018 - Aug 2020</p>
+                    <ul>
+                        <li>Monitored 24/7 critical environments using DataDog, PagerDuty.</li>
+                        <li>Managed AWS infrastructure and configured servers with Ansible.</li>
+                        <li>Built CI/CD pipelines for QA and production deployments.</li>
+                        <li>Worked with Docker Swarm, Mesos (DCOS), and Kubernetes.</li>
+                        <li>Engaged with clients to design tailored solutions.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Linux & AWS Architect - Eternal Web Pvt Ltd, Ahmedabad</h3>
+                    <p>Dec 2017 - Sep 2018</p>
+                    <ul>
+                        <li>Configured Linux VMs and AWS services (EC2, RDS, S3).</li>
+                        <li>Set up web servers and databases, optimizing costs.</li>
+                        <li>Migrated on-premise applications to AWS.</li>
+                        <li>Troubleshot server issues across cloud platforms.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>AWS Architect - Discuss Business Solutions Pvt Ltd, Ahmedabad</h3>
+                    <p>Jan 2017 - Nov 2017</p>
+                    <ul>
+                        <li>Configured Linux VMs and AWS infrastructure.</li>
+                        <li>Managed server software and secured OpenSSH services.</li>
+                        <li>Handled Linux disk management, LVM, and file systems.</li>
+                        <li>Resolved issues with SAMBA, NFS, and installations.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section" id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>Diploma in Electronics and Communication Engineering</h3>
+                    <p>Vidya Bhawan Polytechnic College, Udaipur, Rajasthan | 2012 - 2015</p>
+                </li>
+                <li>
+                    <h3>12th Standard</h3>
+                    <p>Govt. Sen. Sec. School, Kuraj, Rajasthan | 2011 - 2012</p>
+                </li>
+                <li>
+                    <h3>10th Standard</h3>
+                    <p>Govt. Sen. Sec. School, Kuraj, Rajasthan | 2009 - 2010</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section" id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>Red Hat Certified System Administrator (RHCSA)</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>Red Hat Certified Engineer (RHCE V7)</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>Certified Kubernetes Administrator (CKA)</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>AWS Certified Cloud Practitioner</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>AWS Certified Solutions Architect - Associate</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>AWS Certified SysOps Administrator - Associate</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>AWS Certified Developer - Associate</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>Red Hat Certified OpenStack Administrator (RHCOA)</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>Red Hat Certified Virtualization Administrator (RHCVA)</span>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <span>CCNA Trained</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section" id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Zonal Winner - National Robotics Championship 2015</li>
+                <li>Best Project - Gesture Controlled Speaking Console for Differently Abled Persons</li>
+                <li>Pat On The Back Award - Einfochips Ltd</li>
+            </ul>
+        </div>
+
+        <!-- Languages & Tools Section -->
+        <div class="section" id="languages">
+            <h2>Languages & Tools</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>Shell</li>
+                <li>Python</li>
+                <li>Apache</li>
+                <li>Nginx</li>
+                <li>MySQL</li>
+                <li>Chef</li>
+                <li>AWS</li>
+                <li>Slack</li>
+                <li>JIRA</li>
+                <li>Postfix</li>
+                <li>Nagios</li>
+            </ul>
+        </div>
+
+        <!-- Download Resume Section -->
+        <div class="download">
+            <button onclick="openModal()">Download Resume as PDF</button>
+        </div>
+
+        <!-- Modal for Email/OTP -->
+        <div class="modal" id="otpModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">×</span>
+                <h3 id="modalTitle">Enter Your Email</h3>
+                <form id="otpForm">
+                    <input type="text" id="emailInput" placeholder="your.email@example.com" required>
+                    <button type="submit" id="submitButton">Send OTP</button>
+                </form>
+                <p id="modalMessage" class="error"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal and OTP -->
+    <script>
+        // Force scroll to top on page load
+        window.onload = function() {
+            window.scrollTo(0, 0);
+            if (window.location.hash) {
+                window.location.hash = '';
+            }
+        };
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('.nav ul');
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navUl.classList.remove('active');
+            });
+        });
+
+        // Modal handling
+        const modal = document.getElementById('otpModal');
+        const form = document.getElementById('otpForm');
+        const emailInput = document.getElementById('emailInput');
+        const submitButton = document.getElementById('submitButton');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        let currentEmail = ''; // Store email for OTP verification
+
+        function openModal() {
+            modal.style.display = 'flex';
+            emailInput.value = '';
+            emailInput.placeholder = 'your.email@example.com';
+            modalTitle.textContent = 'Enter Your Email';
+            submitButton.textContent = 'Send OTP';
+            modalMessage.textContent = '';
+            currentEmail = '';
+            form.onsubmit = sendOTP;
+            emailInput.type = 'email';
+            emailInput.focus(); // Auto-focus the input field
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            emailInput.value = '';
+            currentEmail = '';
+        }
+
+        async function sendOTP(e) {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                modalMessage.textContent = 'Please enter a valid email.';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/send-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    currentEmail = email;
+                    modalTitle.textContent = 'Enter OTP';
+                    emailInput.value = '';
+                    emailInput.placeholder = 'Enter 6-digit OTP';
+                    emailInput.type = 'text';
+                    submitButton.textContent = 'Verify OTP';
+                    modalMessage.textContent = `OTP sent to ${email}`;
+                    form.onsubmit = verifyOTP;
+                } else {
+                    modalMessage.textContent = data.message || 'Failed to send OTP. Try again.';
+                }
+            } catch (error) {
+                modalMessage.textContent = 'Server error. Please try again later.';
+                console.error('Send OTP error:', error);
+            }
+        }
+
+        async function verifyOTP(e) {
+            e.preventDefault();
+            const otp = emailInput.value.trim();
+            if (!otp.match(/^\d{6}$/)) {
+                modalMessage.textContent = 'Please enter a valid 6-digit OTP.';
+                return;
+            }
+
+            if (!currentEmail) {
+                modalMessage.textContent = 'Email not found. Please start over.';
+                openModal();
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: currentEmail, otp })
+                });
+                if (response.ok) {
+                    window.location.href = '/api/download-resume';
+                    closeModal();
+                } else {
+                    const data = await response.json();
+                    modalMessage.textContent = data.message || 'Invalid OTP. Try again.';
+                }
+            } catch (error) {
+                modalMessage.textContent = 'Server error. Please try again later.';
+                console.error('Verify OTP error:', error);
+            }
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>
