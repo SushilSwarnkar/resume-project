@@ -63,7 +63,7 @@ Use Nginx as a reverse proxy to forward traffic from port 80/443 to your Node.js
 ```nginx
 server {
     listen 80;
-    server_name sushilswarnkar.info www.sushilswarnkar.info;
+    server_name [sushilswarnkar.info](https://yourdomain.com) www.[sushilswarnkar.info;](https://yourdomain.com)
 
     return 301 https://sushilswarnkar.info$request_uri;
 }
@@ -72,8 +72,8 @@ server {
     listen 443 ssl;
     server_name sushilswarnkar.info www.sushilswarnkar.info;
 
-    ssl_certificate /etc/letsencrypt/live/sushilswarnkar.info/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/sushilswarnkar.info/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/[sushilswarnkar.info](https://yourdomain.com)/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/[sushilswarnkar.info](https://yourdomain.com)/privkey.pem;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -107,4 +107,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🙇‍♂️ Author
 
 **Sushil Swarnkar**
-[LinkedIn](https://linkedin.com/in/sushilswarnkar) • [GitHub](https://github.com/SushilSwarnkar)
+[LinkedIn](https://linkedin.com/in/sushil-swarnkar) • [GitHub](https://github.com/SushilSwarnkar)
